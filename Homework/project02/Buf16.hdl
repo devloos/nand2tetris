@@ -3,6 +3,6 @@ CHIP Buf16 {
   OUT out[16];
 
   PARTS:
-  Not16(in=in, out=out);
-  Not16(in=out, out=out);
+  Not16(in=in, out=inverted);
+  Not16(in=inverted, out=out);
 }

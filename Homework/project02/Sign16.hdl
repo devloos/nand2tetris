@@ -1,0 +1,8 @@
+CHIP Sign16 {
+  IN in[16];
+  OUT out;
+
+  PARTS:
+  Not(in=in[15], out=inverted);
+  Not(in=inverted, out=out);
+}
