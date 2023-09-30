@@ -42,5 +42,61 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+    // Component A
+    Not(in=zx, out=x1);
+    And16(
+        a[0]=x1,
+        a[1]=x1,
+        a[2]=x1,
+        a[3]=x1,
+        a[4]=x1,
+        a[5]=x1,
+        a[6]=x1,
+        a[7]=x1,
+        a[8]=x1,
+        a[9]=x1,
+        a[10]=x1,
+        a[11]=x1,
+        a[12]=x1,
+        a[13]=x1,
+        a[14]=x1,
+        a[15]=x1, b=x, out=x2);
+    Invert16(in=x2, invert=nx, out=x3);
+
+    // Component B
+    Not(in=zy, out=y1);
+    And16(
+        a[0]=y1,
+        a[1]=y1,
+        a[2]=y1,
+        a[3]=y1,
+        a[4]=y1,
+        a[5]=y1,
+        a[6]=y1,
+        a[7]=y1,
+        a[8]=y1,
+        a[9]=y1,
+        a[10]=y1,
+        a[11]=y1,
+        a[12]=y1,
+        a[13]=y1,
+        a[14]=y1,
+        a[15]=y1, b=y, out=y2);
+    Invert16(in=y2, invert=ny, out=y3);
+
+    // Component C
+    Add16(a=x3, b=y3, out=xplusy);
+
+    // Component D
+    And16(a=y3, b=x3, out=xandy);
+
+    // Component E
+    Mux16(a=xandy, b=xplusy, sel=f, out=plusorand);
+    Invert16(in=plusorand, invert=no, out=pout);
+
+    // Component F
+    Nor16Way(in=pout, out=zr);
+    Buf16(in=pout, out=out);
+    Sign16(in=pout, out=ng);
+
 }
