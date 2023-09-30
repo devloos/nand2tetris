@@ -3,51 +3,51 @@ CHIP Buf16 {
   OUT out[16];
 
   PARTS:
-    Not(in=in[0], out=n1); 
-    Not(in=n1, out=out[0]);
+  Not(in=in[0], out=n1); 
+  Not(in=n1, out=out[0]);
 
-    Not(in=in[1], out=n2); 
-    Not(in=n2, out=out[1]);
+  Not(in=in[1], out=n2); 
+  Not(in=n2, out=out[1]);
 
-    Not(in=in[2], out=n3);
-    Not(in=n3, out=out[2]);
+  Not(in=in[2], out=n3);
+  Not(in=n3, out=out[2]);
 
-    Not(in=in[3], out=n4);
-    Not(in=n4, out=out[3]);
+  Not(in=in[3], out=n4);
+  Not(in=n4, out=out[3]);
 
-    Not(in=in[4], out=n5);
-    Not(in=n5, out=out[4]);
+  Not(in=in[4], out=n5);
+  Not(in=n5, out=out[4]);
 
-    Not(in=in[5], out=n6);
-    Not(in=n6, out=out[5]);
+  Not(in=in[5], out=n6);
+  Not(in=n6, out=out[5]);
 
-    Not(in=in[6], out=n7);
-    Not(in=n7, out=out[6]);
+  Not(in=in[6], out=n7);
+  Not(in=n7, out=out[6]);
 
-    Not(in=in[7], out=n8);
-    Not(in=n8, out=out[7]);
+  Not(in=in[7], out=n8);
+  Not(in=n8, out=out[7]);
 
-    Not(in=in[8], out=n9);
-    Not(in=n9, out=out[8]);
+  Not(in=in[8], out=n9);
+  Not(in=n9, out=out[8]);
 
-    Not(in=in[9], out=n10);
-    Not(in=n10, out=out[9]);
+  Not(in=in[9], out=n10);
+  Not(in=n10, out=out[9]);
 
-    Not(in=in[10], out=n11);
-    Not(in=n11, out=out[10]);
+  Not(in=in[10], out=n11);
+  Not(in=n11, out=out[10]);
 
-    Not(in=in[11], out=n12);
-    Not(in=n12, out=out[11]);
+  Not(in=in[11], out=n12);
+  Not(in=n12, out=out[11]);
 
-    Not(in=in[12], out=n13);
-    Not(in=n13, out=out[12]);
+  Not(in=in[12], out=n13);
+  Not(in=n13, out=out[12]);
 
-    Not(in=in[13], out=n14);
-    Not(in=n14, out=out[13]);
+  Not(in=in[13], out=n14);
+  Not(in=n14, out=out[13]);
 
-    Not(in=in[14], out=n15);
-    Not(in=n15, out=out[14]);
+  Not(in=in[14], out=n15);
+  Not(in=n15, out=out[14]);
 
-    Not(in=in[15], out=n16);
-    Not(in=n16, out=out[15]);
+  Not(in=in[15], out=n16);
+  Not(in=n16, out=out[15]);
 }
