@@ -15,5 +15,20 @@ CHIP RAM8 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Does this ever read? What if load value was 0?
+    // if load is 1 then the address we want is selected and given a load value of 1
+    DMux8Way(in=load, sel=address, a=lreg0, b=lreg1, c=lreg2, d=lreg3, e=lreg4, f=lreg5, g=lreg6, h=lreg7);
+
+    // there should only be one register with a load value of 1
+    Register(in=in, load=lreg0, out=out0);
+    Register(in=in, load=lreg1, out=out1);
+    Register(in=in, load=lreg2, out=out2);
+    Register(in=in, load=lreg3, out=out3);
+    Register(in=in, load=lreg4, out=out4);
+    Register(in=in, load=lreg5, out=out5);
+    Register(in=in, load=lreg6, out=out6);
+    Register(in=in, load=lreg7, out=out7);
+
+    // focus on output from only selected register
+    Mux8Way16(a=out0, b=out1, c=out2, d=out3, e=out4, f=out5, g=out6, h=out7, sel=address, out=out);
 }
