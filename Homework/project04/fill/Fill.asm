@@ -12,3 +12,21 @@
 // the screen should remain fully clear as long as no key is pressed.
 
 // Put your code here.
+
+
+// FUNCTION:
+// compute all pixels depending on pixelcolor
+// ...
+// LOOP
+
+// LOOP:
+// if KBD == 0
+//   set pixelcolor 0
+// else
+//   set pixelcolor 1
+
+// if prev == pixelcolor
+//   LOOP
+// else
+//   prev = pixelcolor
+//   FUNCTION
