@@ -13,12 +13,6 @@
 
 // Put your code here.
 
-
-// FUNCTION:
-// compute all pixels depending on pixelcolor
-// ...
-// LOOP
-
 // LOOP:
 // if KBD == 0
 //   set pixelcolor 0
@@ -29,7 +23,10 @@
 //   LOOP
 // else
 //   prev = pixelcolor
-//   FUNCTION
+//   FUNCTION:
+//   compute all pixels depending on pixelcolor
+//   ...
+//   LOOP
 
 @prev
 M=0
@@ -46,6 +43,8 @@ D;JEQ
 // user pressed key
 @pixelcolor
 M=1
+@ENDINPUT
+0;JMP
 
 // if KBD == 0
 (NOINPUT)
@@ -53,6 +52,7 @@ M=1
 M=0
 
 // if prev == pixelcolor LOOP
+(ENDINPUT)
 @pixelcolor
 D=M
 @prev
@@ -66,4 +66,39 @@ D;JEQ
 D=M
 @prev
 M=D
+
+// screen loop init
+@8191
+D=A
+@i
+M=D
+
+(SCREENLOOP)
+@i
+D=M
+@LOOP
+D;JLT
+
+// go forward ith place
+@SCREEN
+D=D+A
+
+// address of current 16 bits into R0
+@R0
+M=D
+
+// grab pixel color
+@pixelcolor
+D=M
+
+//  store either 1 or 0 in current 16 bits or ith index
+@R0
+A=M
+M=D
+
+@i
+M=M-1
+
+@SCREENLOOP
+0;JMP
 
