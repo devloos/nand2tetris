@@ -13,6 +13,7 @@
 //   set pixelcolor 1
 
 // if prev == pixelcolor
+//   used for performance 
 //   LOOP
 // else
 //   prev = pixelcolor
