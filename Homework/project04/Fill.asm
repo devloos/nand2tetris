@@ -42,7 +42,7 @@ D;JEQ
 
 // user pressed key
 @pixelcolor
-M=1
+M=-1
 @ENDINPUT
 0;JMP
 
