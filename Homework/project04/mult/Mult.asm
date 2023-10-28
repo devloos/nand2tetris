@@ -27,3 +27,16 @@
 // END:
 // @END
 // 0;jmp
+
+(LOOP)
+@R0
+D=M
+@END
+D;JEQ
+
+
+
+// infinite program loop
+(END)
+@END
+0;JMP
