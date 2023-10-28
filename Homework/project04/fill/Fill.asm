@@ -30,3 +30,40 @@
 // else
 //   prev = pixelcolor
 //   FUNCTION
+
+@prev
+M=0
+
+@pixelcolor
+M=0
+
+(LOOP)
+@KBD
+D=M
+@NOINPUT
+D;JEQ
+
+// user pressed key
+@pixelcolor
+M=1
+
+// if KBD == 0
+(NOINPUT)
+@pixelcolor
+M=0
+
+// if prev == pixelcolor LOOP
+@pixelcolor
+D=M
+@prev
+D=D-M
+@LOOP
+D;JEQ
+
+// else
+// prev = pixelcolor
+@pixelcolor
+D=M
+@prev
+M=D
+
