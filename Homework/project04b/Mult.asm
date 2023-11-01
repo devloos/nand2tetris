@@ -20,6 +20,24 @@
 @R2
 M=0
 
+// flag = 0
+@flag
+M=0
+
+// if R0 is positive jump to loop
+@R0
+D=M
+@LOOP
+D;JGE
+
+// R0 is negative... convert to positive
+D=!D
+D=D+1
+
+// we need to set flag
+@flag
+M=1
+
 // if R0 == 0
 (LOOP)
 @R0
@@ -39,6 +57,17 @@ M=M-1
 
 @LOOP
 0;JMP
+
+// if flag was false or 0 go to end
+@flag
+D=M
+@END
+D;JEQ
+
+// needs to be flipped because flag was set
+@R2
+M=!M
+M=M+1
 
 // infinite program loop
 (END)
