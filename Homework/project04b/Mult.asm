@@ -24,15 +24,21 @@ M=0
 @flag
 M=0
 
-// if R0 is positive jump to loop
 @R0
+D=M
+@lcv
+M=D
+
+// if R0 is positive jump to loop
+@lcv
 D=M
 @LOOP
 D;JGE
 
 // R0 is negative... convert to positive
-D=!D
-D=D+1
+@lcv
+M=!M
+M=M+1
 
 // we need to set flag
 @flag
@@ -40,9 +46,9 @@ M=1
 
 // if R0 == 0
 (LOOP)
-@R0
+@lcv
 D=M
-@END
+@FLAGCHECK
 D;JEQ
 
 // R2 = R2 + R1
@@ -52,12 +58,13 @@ D=M
 M=D+M
 
 // R0 = R0 - 1
-@R0
+@lcv
 M=M-1
 
 @LOOP
 0;JMP
 
+(FLAGCHECK)
 // if flag was false or 0 go to end
 @flag
 D=M
